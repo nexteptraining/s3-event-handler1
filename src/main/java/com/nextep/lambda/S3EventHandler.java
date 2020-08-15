@@ -11,7 +11,7 @@ public class S3EventHandler implements RequestHandler<S3EventNotification, Strin
 	public String handleRequest(S3EventNotification input, Context context) {
 
 		context.getLogger().log("handleRequest has been called");
-
+		
 		S3Entity s3 = input.getRecords().get(0).getS3();
 		String bucketName = s3.getBucket().getName();
 		String objectKey = s3.getObject().getKey();
